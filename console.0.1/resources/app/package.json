@@ -1,0 +1,22 @@
+{
+  "name": "console",
+  "version": "1.0.0",
+  "description": "WIP console window to show system information",
+  "main": "main.js",
+  "scripts": {
+    "start": "console ."
+  },
+  "repository": "https://github.com/chloechantelle/console",
+  "keywords": [
+    "Electron",
+    "console",
+    "cmdfetch",
+    "system",
+    "windows"
+  ],
+  "author": "chloechantelle",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  }
+}

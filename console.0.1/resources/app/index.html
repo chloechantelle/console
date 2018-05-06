@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Console</title>
+    <link rel="stylesheet" href="style.css">   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700|Pacifico" rel="stylesheet">
+  </head>
+  <body>
+
+<nav>
+<form class="search" method="get" target="_blank" action="https://google.com/search">
+<input class="searchbar" type="text" name="q" placeholder="Search Google" autofocus="autofocus">
+</form>  
+</nav>  
+
+<div class="contain">
+
+        <div class="left">
+        
+<div class="text">
+<div id="name"></div>
+<div id="os"></div>
+<div id="platform"></div>
+<div id="arch"></div>
+<div id="home"></div>
+<div id="uptime"></div>
+</div>
+
+<div id="time"></div>
+
+        </div>
+
+        <div class="right"><a href="#" onClick="folder()" title="Open Image Folder"><img src="img/moon.jpg"></a></div>
+
+</div>    
+
+    <script>   
+
+var os = require("os");
+
+// username
+const username = require('username');
+username().then(name => {
+  document.getElementById("name").innerHTML = 'Name: ' + name;
+});
+
+// os
+document.getElementById("os").innerHTML = 'OS: ' + os.type();
+document.getElementById("platform").innerHTML = 'Platform: ' + os.platform();
+
+// architecture
+document.getElementById("arch").innerHTML = 'Arch: ' + os.arch();
+
+// directory
+document.getElementById("home").innerHTML = 'Home: ' + os.homedir();
+
+// uptime
+time = os.uptime();
+var h = Math.floor(time / 3600);
+var m = Math.floor(time % 3600 / 60);
+var s = Math.floor(time % 3600 % 60);
+document.getElementById("uptime").innerHTML = 'Uptime: ' + h + ' hours ' + m + ' minutes '+ s + ' seconds ';
+
+// open image folder
+function folder() {
+const {shell} = require('electron')
+shell.showItemInFolder("D:/Code/Electron/quartz/img/coffee.jpg")
+}   
+
+</script>
+
+<script>
+
+// time
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function time() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  t = setTimeout(function() {
+    time()
+  }, 500);
+}
+time();
+
+</script>
+
+require('./renderer.js')
+
+    </script>
+  </body>
+</html>

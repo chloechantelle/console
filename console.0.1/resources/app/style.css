@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	background: #fff;
+	color: #000;
+	transition: ease-in-out .3s;
+}
+input {
+	width: 100%;	
+	text-align: center;
+}
+input, input:focus {
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+input:focus {
+	background: #eee;
+}
+.contain {
+	/*display: inline-block;*/
+	/*min-height: 1000px;*/
+	/*min-height: 100%;*/
+	/*background: #000;*/
+}
+.left {
+	width: 60%;
+	float: left;	
+	/*background: #aaa;	*/
+	/*min-height: 200px;*/
+	height: 1000px;
+	min-height: 100%;
+}
+.left .text {
+	padding: 15px;
+}
+.text div {
+	padding: 2px;
+}
+#time {
+	font-size: 70px;
+	margin: 30px;
+	text-align: center;
+	font-family: "Pacifico", cursive;
+}
+.right {
+	width: 40%;
+	float: right;
+	/*background: url("img/coffee.jpg");*/
+	/*background-size: cover;*/
+	/*height: 400px;*/
+	/*min-height: 100%;	*/
+}
+.right img {
+	width: 100%;
+	height: 100%;
+}
