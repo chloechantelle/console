@@ -6,7 +6,9 @@ Console is the program version of a Rainmeter skin I created a while ago. The id
 # Instructions
 
 1. Download/clone this repo
-2. Run console.exe
+2. Extract node_modules.zip in `console\resources\app`
+3. Move node_modules into `\app` so there is no duplicate folder
+4. Run console.exe
 
 # Customizing
 
